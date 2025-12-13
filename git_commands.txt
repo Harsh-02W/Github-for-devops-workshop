@@ -1,0 +1,9 @@
+git basic commands:
+git init
+git status
+git add .
+git status
+git commit -m "added testing file"
+git status
+git status
+git restore .
