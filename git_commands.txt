@@ -7,3 +7,9 @@ git commit -m "added testing file"
 git status
 git status
 git restore .
+git remote -v
+git remote add origin [link]
+git branch
+git remote set-url origin
+git push origin main
+git pull --rebase origin main [if the git repo is bit forward from my local repo I need to rebase it so that it can syncronized with my remote repo]
