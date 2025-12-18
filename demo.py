@@ -1,1 +1,7 @@
-print("this is the demo for testin git hooks")
+def my_function():
+
+    a = 123
+    return a
+
+
+my_function()
