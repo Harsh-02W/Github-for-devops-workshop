@@ -1,25 +1,54 @@
-print("Hello doston!");
-# basic_math.py
+"""
+Number guessing game.
 
-# Ask the user for two numbers
-num1 = float(input("Enter the first number: "))
-num2 = float(input("Enter the second number: "))
+The computer selects a random number and the user
+tries to guess it with hints provided.
+"""
 
-# Perform basic math operations
-sum_result = num1 + num2
-diff_result = num1 - num2
-prod_result = num1 * num2
+import random
 
-# Handle division safely
-if num2 != 0:
-    div_result = num1 / num2
-else:
-    div_result = "undefined (division by zero)"
 
-# Print the results
-print(f"\nResults:")
-print(f"Addition: {sum_result}")
-print(f"Subtraction: {diff_result}")
-print(f"Multiplication: {prod_result}")
-print(f"Division: {div_result}")
+def get_user_guess() -> int:
+    """
+    Prompt the user for a numeric guess.
 
+    :return: User's guessed number
+    """
+    while True:
+        try:
+            return int(input("Enter your guess (1–100): "))
+        except ValueError:
+            print("Please enter a valid number.")
+
+
+def play_game() -> None:
+    """
+    Run the guessing game logic.
+    """
+    secret_number = random.randint(1, 100)
+    attempts = 0
+
+    print("🎲 I have selected a number between 1 and 100.")
+
+    while True:
+        guess = get_user_guess()
+        attempts += 1
+
+        if guess < secret_number:
+            print("Too low!")
+        elif guess > secret_number:
+            print("Too high!")
+        else:
+            print(f"🎉 Correct! You guessed it in {attempts} attempts.")
+            break
+
+
+def main() -> None:
+    """
+    Main entry point.
+    """
+    play_game()
+
+
+if __name__ == "__main__":
+    main()
