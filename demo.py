@@ -21,7 +21,7 @@ def add(first: Number, second: Number) -> Number:
     return first + second
 
 
-def subtract(first: Number, second: Number) -> Number:
+def subtract(first: Number, second: Number) -> Number:mfd
     """
     Subtract the second number from the first.
 
